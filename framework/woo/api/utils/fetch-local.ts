@@ -6,9 +6,7 @@ import fetch from './fetch'
 const fetchGraphqlApi: (getConfig: () => LocalConfig) => GraphQLFetcher =
   (getConfig) =>
   async (query: string, { variables, preview } = {}, fetchOptions) => {
-  console.log('DA?');
     const config = getConfig()
-    console.log(config.commerceUrl, 'config.commerceUrl');
     const res = await fetch(config.commerceUrl, {
       ...fetchOptions,
       method: 'POST',
@@ -22,7 +20,6 @@ const fetchGraphqlApi: (getConfig: () => LocalConfig) => GraphQLFetcher =
       }),
     })
 
-    console.log('sta?');
 
     const json = await res.json()
     if (json.errors) {
