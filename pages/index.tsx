@@ -25,7 +25,7 @@ export async function getStaticProps({
   const { pages } = await pagesPromise
   const { categories, brands } = await siteInfoPromise
 
-  console.log(pages, 'pages')
+  console.log(pages, 'pages3')
   return {
     props: {
       products,

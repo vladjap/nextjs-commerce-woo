@@ -26,7 +26,7 @@ export async function getStaticProps({
   const path = params?.pages.join('/')
   const slug = locale ? `${locale}/${path}` : path
 
-  console.log(pages, 'pages');
+  console.log(pages, 'pages1');
   // @ts-ignore
   const pageItem = pages.find((p: Page) =>
     p.url ? getSlug(p.url) === slug : false
@@ -59,7 +59,7 @@ export async function getStaticPaths({ locales }: GetStaticPathsContext) {
   const config = { locales }
   // @ts-ignore
   const { pages }: { pages: Page[] } = await commerce.getAllPages({ config })
-  console.log(pages, 'pages')
+  console.log(pages, 'pages2')
   const [invalidPaths, log] = missingLocaleInPages()
   const paths = pages
     .map((page) => page.url)
