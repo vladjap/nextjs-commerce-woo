@@ -48,10 +48,10 @@ export default function getAllProductPathsOperation({
   ): Promise<T['data']>
 
   async function getAllProductPaths<T extends GetAllProductPathsOperation>({
-                                                                             query = getAllProductPathsQuery,
-                                                                             variables,
-                                                                             config: cfg,
-                                                                           }: {
+     query = getAllProductPathsQuery,
+     variables,
+     config: cfg,
+   }: {
     query?: string
     variables?: T['variables']
     config?: BigcommerceConfig
@@ -62,6 +62,7 @@ export default function getAllProductPathsOperation({
     const { data } = await config.fetch<GetAllProductPathsQuery>(query, {
       variables,
     })
+    console.log('dada 999');
     // @ts-ignore
     const products = data.products.items
 
